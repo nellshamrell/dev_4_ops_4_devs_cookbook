@@ -1,0 +1,38 @@
+---
+driver:
+  name: digitalocean
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: ubuntu-14-04-x64
+    driver_config:
+      region: sfo1
+      private_networking: false
+
+suites:
+  - name: default
+    run_list:
+      - recipe[my_web_server_cookbook::default]
+    attributes:
+  - name: ruby
+    run_list:
+      - recipe[my_web_server_cookbook::ruby]
+    attributes:
+  - name: passenger
+    run_list:
+      - recipe[my_web_server_cookbook::passenger]
+    attributes:
+  - name: postgresql
+    run_list:
+      - recipe[my_web_server_cookbook::postgresql]
+    attributes:
+  - name: user
+    run_list:
+      - recipe[my_web_server_cookbook::user]
+    attributes:
+  - name: app
+    run_list:
+      - recipe[my_web_server_cookbook::app]
+    attributes:
