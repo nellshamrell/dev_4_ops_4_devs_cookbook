@@ -29,8 +29,12 @@ describe 'my_web_server_cookbook::passenger' do
     it { should be_file }
   end
 
-  describe file('/etc/apache2/apache2.conf') do
+  describe file('/etc/apache2/mods-available/passenger.conf') do
     it { should be_file }
     its(:content) { should match /LoadModule passenger_module/ }
+  end
+
+  describe file('/etc/apache2/mods-enabled/passenger.conf') do
+    it { should be_symlink }
   end
 end
