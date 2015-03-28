@@ -190,9 +190,9 @@ IncludeOptional conf-enabled/*.conf
 # Include the virtual host configurations:
 IncludeOptional sites-enabled/*.conf
 
-LoadModule passenger_module /var/lib/gems/1.9.1/gems/passenger-5.0.4/buildout/apache2/mod_passenger.so
+LoadModule passenger_module /var/lib/gems/1.9.1/gems/passenger-5.0.5/buildout/apache2/mod_passenger.so
 <IfModule mod_passenger.c>
-PassengerRoot /var/lib/gems/1.9.1/gems/passenger-5.0.4
+PassengerRoot /var/lib/gems/1.9.1/gems/passenger-5.0.5
 PassengerDefaultRuby /usr/bin/ruby1.9.1
 </IfModule>
 # vim: syntax=apache ts=4 sw=4 sts=4 sr noet
