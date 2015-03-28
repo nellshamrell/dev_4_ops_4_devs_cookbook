@@ -9,6 +9,7 @@ include_recipe 'my_web_server_cookbook::ruby'
 execute 'sudo gem install passenger' do
   command "sudo gem install passenger"
   action :run
+#  not_if { 'gem list | grep passenger'}
 end
 
 package 'apache2-dev'
@@ -41,6 +42,10 @@ execute 'passenger-install-apache2-module' do
   action :run
 end
 
+# Write out passenger bits into mods available
+# Create a symlink from mods enabled that points to mods available
+# use template and link resource
+# In template resource, wants a to notify apache2 to restart
 template '/etc/apache2/apache2.conf' do
   source 'passenger-apache2.conf.erb'
 end

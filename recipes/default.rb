@@ -15,6 +15,6 @@ service 'apache2' do
   action [:start, :enable]
 end
 
-template '/var/www/html/index.html' do
-  source 'index.html.erb'
+template '/etc/apache2/apache2.conf' do
+  source 'apache2.conf.erb'
 end

@@ -11,4 +11,10 @@ describe 'my_web_server_cookbook::app' do
   describe file('/etc/apache2/apache2.conf') do
     its(:content) { should match /<VirtualHost \*:80>/ }
   end
+
+  describe command('passenger-memory-stats') do
+    its(:stdout) { should match /PassengerAgent watchdog/ }
+    its(:stdout) { should match /PassengerAgent server/ }
+    its(:stdout) { should match /PassengerAgent logger/ }
+  end
 end
