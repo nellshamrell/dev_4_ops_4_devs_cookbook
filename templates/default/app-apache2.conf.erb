@@ -197,7 +197,7 @@ PassengerDefaultRuby /usr/bin/ruby1.9.1
 </IfModule>
 
   <VirtualHost *:80>
-  ServerName 192.241.201.66
+  ServerName <%= node["ip_address"] %>
   DocumentRoot /var/www/widgetworld/current/public
   <Directory /var/www/widgetworld/current/public>
   # This relaxes Apache security settings.
