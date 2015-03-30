@@ -32,8 +32,3 @@ suites:
     run_list:
       - recipe[my_web_server_cookbook::user]
     attributes:
-  - name: app
-    run_list:
-      - recipe[my_web_server_cookbook::app]
-    attributes:
-      ip_address: "123.456.78.90"
