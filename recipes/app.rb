@@ -6,7 +6,7 @@
 
 include_recipe 'my_web_server_cookbook::default'
 include_recipe 'my_web_server_cookbook::user'
-include_recipe 'my_web_server_cookbook::passenger'
+#include_recipe 'my_web_server_cookbook::passenger'
 
 execute 'change owner and group' do
   command "sudo chown deploy:deploy /var/www"

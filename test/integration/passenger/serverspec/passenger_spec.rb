@@ -21,10 +21,6 @@ describe 'my_web_server_cookbook::passenger' do
     it { should be_installed }
   end
 
-  describe command('swapon -s') do
-    its(:stdout) { should match /\/swap\s+file\s/ }
-  end
- 
   describe file('/var/lib/gems/1.9.1/gems/passenger-5.0.5/buildout/apache2/mod_passenger.so') do
     it { should be_file }
   end
